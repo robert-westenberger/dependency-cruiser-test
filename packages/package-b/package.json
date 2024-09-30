@@ -1,0 +1,11 @@
+{
+  "name": "@depcruiser-test/package-b",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "types": "./src/index.ts",
+  "devDependencies": {
+    "@depcruiser-testing/tsconfig": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

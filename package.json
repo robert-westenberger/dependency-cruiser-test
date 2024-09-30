@@ -1,0 +1,24 @@
+{
+  "name": "@depcruiser-test/root",
+  "version": "0.0.1",
+  "scripts": {
+    "generate:dot": "pnpm exec depcruise --config .dependency-cruiser.js packages -T dot > dependencygraph.dot",
+    "generate:ddot": "pnpm exec depcruise --config .dependency-cruiser.js packages -T ddot > dependencygraphdDot.dot",
+    "generate:archidot": "pnpm exec depcruise --config .dependency-cruiser.js packages -T archi > dependencygraphArchi.dot",
+    "generate:json": "pnpm exec depcruise --config .dependency-cruiser.js packages -T json > dependencygraph.json",
+    "generate:graph": "pnpm exec depcruise --config .dependency-cruiser.js packages -T dot | dot -T svg > dependencygraph.svg",
+    "generate:graphddot": "pnpm exec depcruise --config .dependency-cruiser.js packages -T ddot | dot -T svg > dependencygraphddot.svg",
+    "generate:grapharchi": "pnpm exec depcruise --config .dependency-cruiser.js packages -T archi | dot -T svg > dependencygrapharchi.svg",
+    "generate:desiredGraph": "dot -T svg desiredDependencyGraph.dot > desiredDependencygraph.svg",
+    "generate:desiredGraphWithText": "dot -T svg desiredDependencyGraphWithText.dot > desiredDependencygraphWithText.svg",
+    "generate:archi": "pnpm exec depcruise --config .dependency-cruiser.js packages --output-type archi > architecture-report.json",
+    "build": "pnpm run generate:dot && pnpm run generate:json && pnpm run generate:graph && pnpm run generate:desiredGraph && pnpm run generate:desiredGraphWithText"
+  },
+  "engines": {
+    "node": ">=16.10.0"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "catalog:"
+  },
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+}
